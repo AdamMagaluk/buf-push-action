@@ -17,7 +17,7 @@ chmod +x tmp/test/bin/buf
 unset GITHUB_SHA GITHUB_REF_NAME
 
 test_push() {
-  export GITHUB_SHA GITHUB_REF_NAME BUF_TOKEN DRAFT WANT_BUF_TOKEN WANT_ARGS
+  export GITHUB_SHA GITHUB_REF_NAME BUF_TOKEN DRAFT WANT_BUF_TOKEN WANT_ARGS EXTRA_TAG
   set +e
   ./push.bash "$@" > tmp/test/stdout 2> tmp/test/stderr
   GOT_EXIT_CODE="${?}"
