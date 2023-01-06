@@ -69,6 +69,8 @@ WANT_EXIT_CODE=0
 test_push some/input/path
 echo "ok"
 
+unset EXTRA_TAG
+
 echo "testing happy path draft on main branch"
 GITHUB_SHA=fake-sha
 GITHUB_REF_NAME=main
