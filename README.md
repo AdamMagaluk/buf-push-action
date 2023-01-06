@@ -23,6 +23,7 @@ jobs:
       with:
         buf_token: ${{ secrets.BUF_TOKEN }}
         draft: ${{ github.ref_name != 'main'}}
+        tag: v1.0.0
 ```
 
 With this configuration, upon a push [branches, tags][github-workflow]
@@ -46,6 +47,7 @@ We recommend using [`buf-setup-action`][buf-setup] to install it (as in the exam
 | `buf_token` | The [Buf authentication token][buf-token] used for private [Buf inputs][input]   | ✅        | [`${{github.token}}`][github-token] |
 | `input`     | The path of the [input] you want to push to BSR as a module                      |          | `.`                                 |
 | `draft`     | Indicates if the workflows should push to the BSR as a [draft][buf-draft] commit |          |                                     |
+| `tag`     | Set an optional tag on the BSR artifact along with the git sha. |          |                                     |
 
 > These parameters are derived from [`action.yml`](./action.yml).
 

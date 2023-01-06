@@ -44,10 +44,11 @@ test_push() {
 
 echo "testing happy path"
 GITHUB_SHA=fake-sha
+EXTRA_TAG=other-tag
 GITHUB_REF_NAME=main
 BUF_TOKEN=fake-token
 WANT_BUF_TOKEN=fake-token
-WANT_ARGS="push some/input/path --tag fake-sha"
+WANT_ARGS="push some/input/path --tag fake-sha --tag other-tag"
 WANT_STDOUT="::add-mask::fake-token"
 WANT_STDERR=""
 WANT_EXIT_CODE=0
@@ -57,10 +58,11 @@ echo "ok"
 echo "testing happy path draft"
 GITHUB_SHA=fake-sha
 GITHUB_REF_NAME=fake-ref
+EXTRA_TAG=other-tag
 BUF_TOKEN=fake-token
 DRAFT=true
 WANT_BUF_TOKEN=fake-token
-WANT_ARGS="push some/input/path --draft fake-ref"
+WANT_ARGS="push some/input/path --draft fake-ref --tag other-tag"
 WANT_STDOUT="::add-mask::fake-token"
 WANT_STDERR=""
 WANT_EXIT_CODE=0

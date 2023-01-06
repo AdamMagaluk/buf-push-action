@@ -51,4 +51,9 @@ if [ "${DRAFT}" == "true" ]; then
   BUF_ARGS=("--draft" "${GITHUB_REF_NAME}")
 fi
 
+# allow for an extra tag to be specified
+if [ "${EXTRA_TAG}" ]; then
+  BUF_ARGS+=("--tag" "${EXTRA_TAG}")
+fi
+
 BUF_TOKEN="${BUF_TOKEN}" "${BUF_COMMAND}" "push" "${BUF_INPUT}" "${BUF_ARGS[@]}"
