@@ -1,4 +1,4 @@
-name: buf-push
+name: buf-push-with-tag
 description: >
   Push buf module updates to the Buf Schema Registry.
 branding:
